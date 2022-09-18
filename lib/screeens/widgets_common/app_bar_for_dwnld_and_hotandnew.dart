@@ -18,7 +18,6 @@ class AppBArWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-
             decoration: const BoxDecoration(
               color: Colors.blueAccent,
               image: DecorationImage(
@@ -27,7 +26,7 @@ class AppBArWidget extends StatelessWidget {
               ),
             ),
             width: 35,
-            height:10,
+            height: 10,
           ),
         ),
       ],

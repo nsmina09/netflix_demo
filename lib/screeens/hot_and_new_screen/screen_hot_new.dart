@@ -44,10 +44,12 @@ class ScreenHotAndNew extends StatelessWidget {
                 ],
               ),
               const Expanded(
-                child: TabBarView(children: [
-                  ComingSoon(),
-                  EveryOnesWatching(),
-                ],),
+                child: TabBarView(
+                  children: [
+                    ComingSoon(),
+                    EveryOnesWatching(),
+                  ],
+                ),
               ),
             ],
           ),

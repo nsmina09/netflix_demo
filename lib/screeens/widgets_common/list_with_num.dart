@@ -1,7 +1,5 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:netflix_app/screeens/widgets_common/poster_with_number.dart';
-import '../home_screen/home_screen.dart';
 import 'common_title.dart';
 
 class HomeScreenPosterWithNumber extends StatelessWidget {
@@ -26,7 +24,7 @@ class HomeScreenPosterWithNumber extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: List.generate(
                 10,
-                    (index) => PosterWithNumberWidget(
+                (index) => PosterWithNumberWidget(
                   index: index,
                 ),
               ),

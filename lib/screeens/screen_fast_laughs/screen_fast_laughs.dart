@@ -9,11 +9,12 @@ class ScreenFastLaughs extends StatelessWidget {
     return Scaffold(
       body: PageView(
         scrollDirection: Axis.vertical,
-         children:
-           List.generate(10, (int index) {
-             return FastLaughVideoItem(index: index,);
-           } ),
-        ),
+        children: List.generate(10, (int index) {
+          return FastLaughVideoItem(
+            index: index,
+          );
+        }),
+      ),
     );
   }
 }

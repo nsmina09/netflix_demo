@@ -20,16 +20,20 @@ class SearchResultList extends StatelessWidget {
           height: 20,
         ),
         Expanded(
-            child: GridView.count(
-              childAspectRatio: 1/1.4,
-              shrinkWrap: true,
-          crossAxisCount: 3,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 10,
-          children: List.generate(20, (index)  {
-            return const SearchResultMovieWidget();
-          },),
-        ),),
+          child: GridView.count(
+            childAspectRatio: 1 / 1.4,
+            shrinkWrap: true,
+            crossAxisCount: 3,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 10,
+            children: List.generate(
+              20,
+              (index) {
+                return const SearchResultMovieWidget();
+              },
+            ),
+          ),
+        ),
       ],
     );
   }

@@ -5,7 +5,8 @@ import 'common_title.dart';
 class HomeScreenEachCategory extends StatelessWidget {
   final String title;
   const HomeScreenEachCategory({
-    Key? key, required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -15,7 +16,9 @@ class HomeScreenEachCategory extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HomeScreenTitleWidget(title: title,),
+          HomeScreenTitleWidget(
+            title: title,
+          ),
           const SizedBox(
             height: 10,
           ),

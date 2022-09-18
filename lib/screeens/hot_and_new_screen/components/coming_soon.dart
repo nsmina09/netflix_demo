@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_app/screeens/screen_fast_laughs/components/video_item_widget.dart';
 
 class ComingSoon extends StatelessWidget {
   const ComingSoon({Key? key}) : super(key: key);
@@ -7,7 +6,8 @@ class ComingSoon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [ComingSoonWidgetItem(),
+      children: const [
+        ComingSoonWidgetItem(),
         ComingSoonWidgetItem(),
       ],
     );

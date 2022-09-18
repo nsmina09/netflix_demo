@@ -28,7 +28,7 @@ class PosterWithNumberWidget extends StatelessWidget {
             strokeColor: Colors.white,
             strokeWidth: 3,
             child: Text(
-              '${index+1}',
+              '${index + 1}',
               style: const TextStyle(
                 fontSize: 120,
                 color: Colors.black,

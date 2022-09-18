@@ -10,19 +10,17 @@ class EveryOnesWatching extends StatelessWidget {
         EveryoneWatchingItem(),
         EveryoneWatchingItem(),
         EveryoneWatchingItem(),
-
       ],
     );
   }
 }
-
 
 class EveryoneWatchingItem extends StatelessWidget {
   const EveryoneWatchingItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
@@ -33,7 +31,7 @@ class EveryoneWatchingItem extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10, bottom: 20.0),
           child: Text(
             'sssssssssss ssssssss'
-                'sssssssssssssssssssssssssssssssssssssssssssss',
+            'sssssssssssssssssssssssssssssssssssssssssssss',
             style: TextStyle(
               fontSize: 14,
               color: Colors.grey.withOpacity(.6),
@@ -74,7 +72,7 @@ class EveryoneWatchingItem extends StatelessWidget {
             children: [
               _iconTextButton(text: 'Share', icon: Icons.share),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0,right: 8),
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
                 child: _iconTextButton(text: 'My List', icon: Icons.add),
               ),
               _iconTextButton(text: 'Play', icon: Icons.play_arrow)
