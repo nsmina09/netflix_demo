@@ -7,7 +7,7 @@ import 'package:netflix_app/screeens/screen_fast_laughs/screen_fast_laughs.dart'
 import 'package:netflix_app/screeens/search_screen/search_screen.dart';
 
 class ScreenMain extends StatelessWidget {
-  ScreenMain({Key? key}) : super(key: key);
+  const ScreenMain({Key? key}) : super(key: key);
   final _pages = const [
     ScreenHome(),
     ScreenHotAndNew(),
@@ -23,7 +23,7 @@ class ScreenMain extends StatelessWidget {
           body: SafeArea(
             child: _pages[index],
           ),
-          bottomNavigationBar: BottomNavigationWidget(),
+          bottomNavigationBar:const BottomNavigationWidget(),
         );
       },
       valueListenable: navigationIndexNotifier,

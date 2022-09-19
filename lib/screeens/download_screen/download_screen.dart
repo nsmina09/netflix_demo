@@ -1,8 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_app/application/download/bloc/download_bloc_bloc.dart';
-import 'package:netflix_app/core/url/base_url.dart';
 import 'package:netflix_app/screeens/widgets_common/app_bar_for_dwnld_and_hotandnew.dart';
 import 'components/rotate_poster.dart';
 
@@ -11,12 +8,7 @@ class ScreenDownload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // WidgetsBinding.instance!.addPersistentFrameCallback((timeStamp) {
-    //   BlocProvider.of<DownloadBlocBloc>(context)
-    //       .add(const DownloadBlocEvent.getDownloadsImage());
-    // });
-    BlocProvider.of<DownloadBlocBloc>(context)
-        .add(const DownloadBlocEvent.getDownloadsImage());
+   
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
@@ -67,46 +59,42 @@ class ScreenDownload extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          BlocBuilder<DownloadBlocBloc, DownloadBlocState>(
-            builder: (context, state) {
-              return SizedBox(
+          SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width,
-                child: state.isLoading
-                    ? const Center(child: CircularProgressIndicator())
-                    : Stack(
+                child:Stack(
                         alignment: Alignment.center,
                         children: [
                           CircleAvatar(
                             backgroundColor: Colors.grey.withOpacity(.5),
                             radius: MediaQuery.of(context).size.width * .4,
                           ),
-                          RotatePosterWidget(
+                          const RotatePosterWidget(
                             imageAddress:
-                                '$imageAppendUrl${state.downloads[0].posterPath}',
+                                '',
                             angle: 17 * pi / 180,
-                            margin: const EdgeInsets.only(
+                            margin: EdgeInsets.only(
                               left: 170,
                             ),
                           ),
-                          RotatePosterWidget(
+                          const RotatePosterWidget(
                             imageAddress:
-                                '$imageAppendUrl${state.downloads[1].posterPath}',
+                                '',
                             angle: -17 * pi / 180,
-                            margin: const EdgeInsets.only(
+                            margin: EdgeInsets.only(
                               right: 170,
                             ),
                           ),
-                          RotatePosterWidget(
+                          const RotatePosterWidget(
                             imageAddress:
-                                '$imageAppendUrl${state.downloads[2].posterPath}',
-                            margin: const EdgeInsets.only(bottom: 20),
+                                '',
+                            margin: EdgeInsets.only(bottom: 20),
                           )
                         ],
                       ),
-              );
-            },
-          ),
+              ),
+            
+          
           ElevatedButton(
             style: ButtonStyle(
               shape: MaterialStateProperty.all(

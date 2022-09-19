@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_app/application/search/search_bloc.dart';
-import 'package:netflix_app/core/url/base_url.dart';
+
 
 class IdleSearchList extends StatelessWidget {
   const IdleSearchList({Key? key}) : super(key: key);
@@ -23,39 +22,24 @@ class IdleSearchList extends StatelessWidget {
           height: 20,
         ),
         Expanded(
-          child: BlocBuilder<SearchBloc, SearchState>(
-            builder: (context, state) {
-              if (state.isLoading) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else if (state.isError) {
-                return const Center(
-                  child: Text('Error while loading data'),
-                );
-              } else if (state.idleList.isEmpty) {
-                return const Center(
-                  child: Text('No Movies to show'),
-                );
-              }
-              return ListView.separated(
+          child: ListView.separated(
                 itemBuilder: (context, index) {
-                  final movie = state.idleList[index];
+                  //final movie = state.idleList[index];
                   return IdleSearchMovieWidget(
-                    movieName: movie.title,
-                    imageUrl: '$imageAppendUrl${movie.posterPath}',
+                    movieName: 'movie.title',
+                    imageUrl: '',
                   );
                 },
-                itemCount: state.idleList.length,
+                itemCount: 11,
                 separatorBuilder: (BuildContext context, int index) {
                   return const SizedBox(
                     height: 20,
                   );
                 },
-              );
-            },
+              ),
+            
           ),
-        ),
+        
       ],
     );
   }

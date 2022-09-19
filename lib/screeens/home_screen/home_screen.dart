@@ -1,8 +1,9 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:netflix_app/screeens/widgets_common/category_widget.dart';
-import '../widgets_common/list_with_num.dart';
+import 'package:netflix_app/screeens/widgets_common/list_with_num.dart';
+
 
 ValueNotifier<bool> scrollNotifier = ValueNotifier(true);
 
@@ -56,7 +57,7 @@ class ScreenHome extends StatelessWidget {
                                   width: 40,
                                   height: 40,
                                 ),
-                                Spacer(),
+                               const Spacer(),
                                 IconButton(
                                   onPressed: () {},
                                   icon: const Icon(

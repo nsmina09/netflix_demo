@@ -27,28 +27,28 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  bordered_text:
-  cupertino_icons:
-  dartz:
-  dio:
+  bordered_text: 2.0.0
+  cupertino_icons: null
+  dartz: null
+  dio: null
   flutter:
     sdk: flutter
-  flutter_bloc:
-  freezed_annotation:
-  get_it:
-  google_fonts:
-  injectable:
-  json_annotation:
-  json_serializable:
-  video_player:
+  flutter_bloc: null
+  freezed_annotation: null
+  get_it: null
+  google_fonts: null
+  injectable: null
+  json_annotation: null
+  json_serializable: null
+  video_player: null
 
 dev_dependencies:
-  build_runner:
-  flutter_lints:
+  build_runner: null
+  flutter_lints: null
   flutter_test:
     sdk: flutter
-  freezed: 
-  injectable_generator:
+  freezed: null
+  injectable_generator: null
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,10 +59,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
-#  assets:
-#    - asset/images/
+  assets:
+      - asset/images/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

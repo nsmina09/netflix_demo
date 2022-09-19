@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:netflix_app/screeens/hot_and_new_screen/components/coming_soon.dart';
 import 'package:netflix_app/screeens/hot_and_new_screen/components/everyones_watching.dart';
