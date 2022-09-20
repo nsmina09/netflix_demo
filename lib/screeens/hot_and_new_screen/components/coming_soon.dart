@@ -51,7 +51,7 @@ class ComingSoonWidgetItem extends StatelessWidget {
                   children: [
                     Container(
                       height: 300,
-                      width: MediaQuery.of(context).size.width * .75,
+                      width: MediaQuery.of(context).size.width * .70,
                       decoration: const BoxDecoration(
                         color: Colors.grey,
                         image: DecorationImage(
@@ -107,7 +107,7 @@ class ComingSoonWidgetItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 28.0),
                   child: SizedBox(
-                    width: MediaQuery.of(context).size.width * .8,
+                    width: MediaQuery.of(context).size.width * .7,
                     child: Text(
                       'sssssssssss ssssssss'
                       'sssssssssssssssssssssssssssssssssssssssssssss',

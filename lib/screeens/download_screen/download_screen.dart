@@ -1,5 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_app/application/downloads/downloads_bloc.dart';
+import 'package:netflix_app/domain/constants.dart';
 import 'package:netflix_app/screeens/widgets_common/app_bar_for_dwnld_and_hotandnew.dart';
 import 'components/rotate_poster.dart';
 
@@ -8,7 +11,13 @@ class ScreenDownload extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
+    // WidgetsBinding.instance!.addPersistentFrameCallback((timeStamp) {
+    //   BlocProvider.of<DownloadsBloc>(context)
+    //       .add(const DownloadsEvent.started());
+    // });
+ BlocProvider.of<DownloadsBloc>(context)
+          .add(const DownloadsEvent.started());
+          
     return Scaffold(
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50),
@@ -59,42 +68,44 @@ class ScreenDownload extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          SizedBox(
+          BlocBuilder<DownloadsBloc, DownloadsState>(
+            builder: (context, state) {
+         print("imagelist${state.downloadList}");
+              return 
+               state.isLoading?const Center(child:CircularProgressIndicator()):
+              SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width,
-                child:Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.grey.withOpacity(.5),
-                            radius: MediaQuery.of(context).size.width * .4,
-                          ),
-                          const RotatePosterWidget(
-                            imageAddress:
-                                '',
-                            angle: 17 * pi / 180,
-                            margin: EdgeInsets.only(
-                              left: 170,
-                            ),
-                          ),
-                          const RotatePosterWidget(
-                            imageAddress:
-                                '',
-                            angle: -17 * pi / 180,
-                            margin: EdgeInsets.only(
-                              right: 170,
-                            ),
-                          ),
-                          const RotatePosterWidget(
-                            imageAddress:
-                                '',
-                            margin: EdgeInsets.only(bottom: 20),
-                          )
-                        ],
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.grey.withOpacity(.5),
+                      radius: MediaQuery.of(context).size.width * .4,
+                    ),
+                     RotatePosterWidget(
+                      imageAddress: '$imageAppendUrl${state.downloadList[0].posterPath}',
+                      angle: 17 * pi / 180,
+                      margin: const EdgeInsets.only(
+                        left: 170,
                       ),
-              ),
-            
-          
+                    ),
+                     RotatePosterWidget(
+                      imageAddress: '$imageAppendUrl${state.downloadList[1].posterPath}',
+                      angle: -17 * pi / 180,
+                      margin: const EdgeInsets.only(
+                        right: 170,
+                      ),
+                    ),
+                     RotatePosterWidget(
+                      imageAddress: '$imageAppendUrl${state.downloadList[2].posterPath}',
+                      margin: const EdgeInsets.only(bottom: 20),
+                    )
+                  ],
+                ),
+              );
+            },
+          ),
           ElevatedButton(
             style: ButtonStyle(
               shape: MaterialStateProperty.all(
